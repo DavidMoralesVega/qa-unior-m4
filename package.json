@@ -1,0 +1,16 @@
+{
+  "name": "qa-unior-m4",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Módulo IV · Automatización avanzada de QA — Diplomado Full Stack & QA Automation, UNIOR",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen https://demowebshop.tricentis.com/"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4"
+  }
+}
