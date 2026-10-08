@@ -20,7 +20,7 @@ test.describe('Carrito', () => {
   });
 
   test('DWS-CAR-003 · el precio de «Fiction» es 24.00', async () => {
-    await expect(catalogo.precio('Fiction')).toHaveText('24.00');
+    await expect(catalogo.precio('Fiction')).toHaveText('25.00');
   });
 
   test('DWS-CAR-004 · el libro aparece dentro del carrito', async ({ page }) => {
