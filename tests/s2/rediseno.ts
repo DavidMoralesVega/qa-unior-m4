@@ -8,6 +8,9 @@ import { type Page } from '@playwright/test';
 export class Rediseno {
   static async aplicar(page: Page) {
     if (!process.env.REDISENO) return;
+    // Que el clic que no encuentra el botón falle a los 5 s y no a los 30; cargar la página sigue con 30 s.
+    page.setDefaultNavigationTimeout(30_000);
+    page.setDefaultTimeout(5_000);
     await page.route('**/login', async (route) => {
       const respuesta = await route.fetch();
       const html = await respuesta.text();

@@ -8,7 +8,7 @@
     "test:ui": "playwright test --ui",
     "report": "playwright show-report",
     "codegen": "playwright codegen https://demowebshop.tricentis.com/",
-    "rediseno": "REDISENO=1 playwright test tests/s2/sin-pom.spec.ts tests/s2/inicio-de-sesion.spec.ts --timeout=8000"
+    "rediseno": "REDISENO=1 playwright test tests/s2/sin-pom.spec.ts tests/s2/inicio-de-sesion.spec.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",
