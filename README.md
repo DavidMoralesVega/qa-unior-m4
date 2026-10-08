@@ -21,7 +21,7 @@ npx playwright install chromium
 npx playwright test
 ```
 
-Debe terminar en `15 passed`. Una prueba aparece con ✘ a propósito: muestra el error del modo
+Debe terminar en `28 passed`. Una prueba aparece con ✘ a propósito: muestra el error del modo
 estricto y está marcada con `test.fail()`.
 
 | Comando | Qué hace |
@@ -30,13 +30,17 @@ estricto y está marcada con `test.fail()`.
 | `npm run test:ui` | abre el modo interactivo con la traza de cada paso |
 | `npm run report` | abre el reporte HTML de la última ejecución |
 | `npm run codegen` | graba acciones en la tienda y escribe el código |
+| `npm run rediseno` | simula que el botón «Log in» pasó a llamarse «Sign in» (Mac y Linux) |
 
 ## Estructura
 
 ```
 playwright.config.ts      configuración: entorno, navegadores, evidencia
+.github/workflows/        GitHub Actions: corre las pruebas en cada push
 tests/
 ├─ datos.ts               usuario de prueba
 ├─ preparacion.setup.ts   crea el usuario antes de todo
-└─ s1/                    sesión 1: login, selectores, carrito
+├─ paginas/               Page Objects: login, catálogo, carrito
+├─ s1/                    sesión 1: login, selectores, carrito
+└─ s2/                    sesión 2: las mismas pruebas con POM, y el rediseño
 ```
