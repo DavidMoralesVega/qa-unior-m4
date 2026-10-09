@@ -1,4 +1,11 @@
 import { defineConfig, devices } from '@playwright/test';
+import { defineBddConfig } from 'playwright-bdd';
+
+// Sesión 3: los .feature se traducen a pruebas de Playwright en la carpeta .features-gen
+const testDirBdd = defineBddConfig({
+  features: 'tests/s3/*.feature',
+  steps: 'tests/s3/pasos.ts',
+});
 
 /**
  * Configuración del proyecto del Módulo IV.
@@ -25,6 +32,12 @@ export default defineConfig({
     { name: 'preparacion', testMatch: /preparacion\.setup\.ts/ },
     {
       name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
+      dependencies: ['preparacion'],
+    },
+    {
+      name: 'bdd',
+      testDir: testDirBdd,
       use: { ...devices['Desktop Chrome'] },
       dependencies: ['preparacion'],
     },
