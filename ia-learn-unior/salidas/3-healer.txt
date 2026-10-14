@@ -1,0 +1,10 @@
+Las 4 pruebas pasan ahora. Antes fallaban 2, el agente `playwright-test-healer` las corrigió y yo volví a ejecutar la suite completa para comprobarlo (4 pasan, 18.9 s).
+
+Las dos que fallaban eran justo los archivos que tenías modificados sin commitear. La aplicación estaba bien; el error venía de esas ediciones:
+
+1. **`tests/catalogo/listado-programas.spec.ts:25`**: el precio de "Full Stack Development & Advanced QA Automation" estaba como `Bs 7.500`. La página y el plan (`specs/plan-learn-unior.md:26`) muestran `Bs 7.000`, así que se cambió a `'Bs 7.000'`.
+2. **`tests/catalogo/navegacion-ficha.spec.ts:16`**: buscaba un enlace llamado `Ver detalles`, que no existe en la página, y por eso se agotaba el tiempo de espera de 30 s. El enlace de cada tarjeta se llama `Ver programa`, y se cambió a ese nombre.
+
+No se tocó la aplicación, no se debilitó ninguna aserción y no hizo falta marcar ninguna prueba con `fixme`.
+
+Después de los arreglos, `git diff` sale vacío. Es decir, las correcciones dejaron los dos archivos exactamente como están en el último commit, y tus cambios locales se descartaron. Si esos cambios eran intencionados (por ejemplo, si el precio va a pasar a Bs 7.500 o el botón va a cambiar de nombre), habría que actualizar primero la aplicación o el plan, no la prueba.

@@ -1,0 +1,39 @@
+
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✗ 'p(95)<1' p(95)=4.83ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 100     9.895525/s
+    checks_succeeded...: 100.00% 100 out of 100
+    checks_failed......: 0.00%   0 out of 100
+
+    ✓ listar tareas 200
+
+    HTTP
+    http_req_duration..............: avg=3.57ms  min=1.48ms   med=3.21ms   max=16.08ms  p(90)=4.68ms   p(95)=4.83ms 
+      { expected_response:true }...: avg=3.57ms  min=1.48ms   med=3.21ms   max=16.08ms  p(90)=4.68ms   p(95)=4.83ms 
+    http_req_failed................: 0.00% 0 out of 101
+    http_reqs......................: 101   9.99448/s
+
+    EXECUTION
+    iteration_duration.............: avg=504.4ms min=502.87ms med=504.13ms max=506.14ms p(90)=505.61ms p(95)=505.8ms
+    iterations.....................: 100   9.895525/s
+    vus............................: 5     min=5        max=5
+    vus_max........................: 5     min=5        max=5
+
+    NETWORK
+    data_received..................: 53 kB 5.2 kB/s
+    data_sent......................: 35 kB 3.4 kB/s
+
+
+
+time="2026-10-12T11:30:30-04:00" level=error msg="thresholds on metrics 'http_req_duration' have been crossed"
+código de salida: 99

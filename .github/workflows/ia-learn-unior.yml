@@ -1,0 +1,36 @@
+name: IA · learn-unior
+
+on:
+  push:
+    paths: ['ia-learn-unior/**', '.github/workflows/ia-learn-unior.yml']
+  workflow_dispatch:
+
+jobs:
+  # Pruebas de interfaz contra la app Angular publicada, con reporte Allure
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: ia-learn-unior
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: ia-learn-unior/package-lock.json
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Pruebas de Playwright
+        run: npx playwright test
+      - name: Generar el reporte Allure
+        if: ${{ !cancelled() }}
+        run: npx allure generate allure-results
+      - name: Guardar el reporte Allure
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-allure
+          path: ia-learn-unior/allure-report/
+          retention-days: 14

@@ -1,0 +1,53 @@
+time="2026-10-12T11:32:52-04:00" level=info msg="Título: Programas de posgrado · UNIOR · programas en el catálogo: 6" source=console
+time="2026-10-12T11:32:55-04:00" level=info msg="Título: Programas de posgrado · UNIOR · programas en el catálogo: 6" source=console
+time="2026-10-12T11:32:59-04:00" level=info msg="Título: Programas de posgrado · UNIOR · programas en el catálogo: 6" source=console
+
+
+  █ THRESHOLDS 
+
+    browser_web_vital_cls
+    ✓ 'p(75)<0.1' p(75)=0.000992
+
+    browser_web_vital_lcp
+    ✓ 'p(75)<2500' p(75)=1.21s
+
+    checks
+    ✓ 'rate==1.0' rate=100.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 9       0.870888/s
+    checks_succeeded...: 100.00% 9 out of 9
+    checks_failed......: 0.00%   0 out of 9
+
+    ✓ el título es "Programas de posgrado · UNIOR"
+    ✓ el h1 dice "Programas de posgrado"
+    ✓ hay al menos 1 programa en el catálogo
+
+    EXECUTION
+    iteration_duration..........: avg=3.14s    min=2.87s   med=3.27s    max=3.29s    p(90)=3.29s    p(95)=3.29s   
+    iterations..................: 3      0.290296/s
+    vus.........................: 1      min=1       max=1
+    vus_max.....................: 1      min=1       max=1
+
+    NETWORK
+    data_received...............: 0 B    0 B/s
+    data_sent...................: 0 B    0 B/s
+
+    BROWSER
+    browser_data_received.......: 4.0 MB 392 kB/s
+    browser_data_sent...........: 36 kB  3.5 kB/s
+    browser_http_req_duration...: avg=621.59ms min=86.04ms med=386.33ms max=1.63s    p(90)=1.51s    p(95)=1.52s   
+    browser_http_req_failed.....: 0.00%  0 out of 67
+
+    WEB_VITALS
+    browser_web_vital_cls.......: avg=0.000554 min=0       med=0.000512 max=0.001048 p(90)=0.001048 p(95)=0.001048
+    browser_web_vital_fcp.......: avg=525.33ms min=348ms   med=512ms    max=716ms    p(90)=675.2ms  p(95)=695.6ms 
+    browser_web_vital_inp.......: avg=0s       min=0s      med=0s       max=0s       p(90)=0s       p(95)=0s      
+    browser_web_vital_lcp.......: avg=1.06s    min=448ms   med=794ms    max=2.23s    p(90)=1.82s    p(95)=2.03s   
+    browser_web_vital_ttfb......: avg=422.43ms min=312ms   med=467.4ms  max=487.9ms  p(90)=483.8ms  p(95)=485.85ms
+
+
+
+código de salida: 0

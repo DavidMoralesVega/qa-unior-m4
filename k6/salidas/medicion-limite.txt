@@ -1,0 +1,29 @@
+Medición del límite del NestJS en esta Mac (Apple M5 Pro, 18 núcleos, 24 GB) — 12/10/2026
+Backend: node dist/src/main.js (un solo proceso Node 24), Postgres 16 en Docker. k6 v2.3.0.
+Scripts: medir-limite-login.js (rampa 5 s + 20 s constantes, POST /api/auth/login + sleep 1)
+         medir-limite-listar.js (20 s constantes, GET /api/todo + sleep 0.5)
+
+A) LOGIN (argon2id, memoryCost 19456, timeCost 2) — aquí está el cuello de botella
+VUs   p95        med       peticiones/s   fallidas
+  5   34.95ms    21.7ms      4.3          0 %
+ 20   28.28ms    18.52ms    17.4          0 %
+ 60   22.91ms    19.89ms    52.0          0 %
+100   18.79ms    16.74ms    86.9          0 %
+150   18.55ms    16.76ms   130.5          0 %
+200   20.72ms    17.4ms    173.8          0 %
+250   99.11ms    33.63ms   212.0          0 %   <- empieza la degradación
+300  268.58ms   229.56ms   218.8          0 %   <- el throughput ya no sube
+400  763.74ms   655.9ms    221.2          0 %   <- solo sube la latencia
+Techo: ~220 logins/s. Pasado ese punto, más usuarios = misma cantidad de respuestas, más espera.
+
+B) LISTAR TAREAS (GET /api/todo con JWT) — no se degrada en latencia hasta 800 VUs
+VUs   p95       peticiones/s   fallidas
+ 50   14.93ms     98.3         0 %
+100   15.66ms    197.5         0 %
+200   17.76ms    393.2         0.62 %  (50 de 8001)
+300   20.65ms    588.6         1.04 %
+400   25.77ms    783.7         2.03 %
+600   24.15ms   1174.9         3.07 %
+800   31.72ms   1556.3         2.38 %
+Los fallos de B son "read: connection reset by peer" del lado de k6 al arrancar todos los VUs de golpe
+(vus fijos, sin rampa): la cola de conexiones de macOS es kern.ipc.somaxconn=128. No son errores del NestJS.

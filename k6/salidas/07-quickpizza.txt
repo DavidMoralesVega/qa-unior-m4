@@ -1,0 +1,163 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: 07-quickpizza.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 5 max VUs, 1m5s max duration (incl. graceful stop):
+              * default: Up to 5 looping VUs for 35s over 3 stages (gracefulRampDown: 30s, gracefulStop: 30s)
+
+
+running (0m01.0s), 1/5 VUs, 0 complete and 0 interrupted iterations
+default   [   3% ] 1/5 VUs  01.0s/35.0s
+
+running (0m02.0s), 1/5 VUs, 1 complete and 0 interrupted iterations
+default   [   6% ] 1/5 VUs  02.0s/35.0s
+
+running (0m03.0s), 2/5 VUs, 1 complete and 0 interrupted iterations
+default   [   9% ] 2/5 VUs  03.0s/35.0s
+
+running (0m04.0s), 2/5 VUs, 2 complete and 0 interrupted iterations
+default   [  11% ] 2/5 VUs  04.0s/35.0s
+
+running (0m05.0s), 2/5 VUs, 4 complete and 0 interrupted iterations
+default   [  14% ] 2/5 VUs  05.0s/35.0s
+
+running (0m06.0s), 3/5 VUs, 6 complete and 0 interrupted iterations
+default   [  17% ] 3/5 VUs  06.0s/35.0s
+
+running (0m07.0s), 3/5 VUs, 7 complete and 0 interrupted iterations
+default   [  20% ] 3/5 VUs  07.0s/35.0s
+
+running (0m08.0s), 4/5 VUs, 9 complete and 0 interrupted iterations
+default   [  23% ] 4/5 VUs  08.0s/35.0s
+
+running (0m09.0s), 4/5 VUs, 12 complete and 0 interrupted iterations
+default   [  26% ] 4/5 VUs  09.0s/35.0s
+
+running (0m10.0s), 4/5 VUs, 15 complete and 0 interrupted iterations
+default   [  29% ] 4/5 VUs  10.0s/35.0s
+
+running (0m11.0s), 5/5 VUs, 18 complete and 0 interrupted iterations
+default   [  31% ] 5/5 VUs  11.0s/35.0s
+
+running (0m12.0s), 5/5 VUs, 21 complete and 0 interrupted iterations
+default   [  34% ] 5/5 VUs  12.0s/35.0s
+
+running (0m13.0s), 5/5 VUs, 26 complete and 0 interrupted iterations
+default   [  37% ] 5/5 VUs  13.0s/35.0s
+
+running (0m14.0s), 5/5 VUs, 28 complete and 0 interrupted iterations
+default   [  40% ] 5/5 VUs  14.0s/35.0s
+
+running (0m15.0s), 5/5 VUs, 32 complete and 0 interrupted iterations
+default   [  43% ] 5/5 VUs  15.0s/35.0s
+
+running (0m16.0s), 5/5 VUs, 36 complete and 0 interrupted iterations
+default   [  46% ] 5/5 VUs  16.0s/35.0s
+
+running (0m17.0s), 5/5 VUs, 40 complete and 0 interrupted iterations
+default   [  49% ] 5/5 VUs  17.0s/35.0s
+
+running (0m18.0s), 5/5 VUs, 43 complete and 0 interrupted iterations
+default   [  51% ] 5/5 VUs  18.0s/35.0s
+
+running (0m19.0s), 5/5 VUs, 46 complete and 0 interrupted iterations
+default   [  54% ] 5/5 VUs  19.0s/35.0s
+
+running (0m20.0s), 5/5 VUs, 51 complete and 0 interrupted iterations
+default   [  57% ] 5/5 VUs  20.0s/35.0s
+
+running (0m21.0s), 5/5 VUs, 54 complete and 0 interrupted iterations
+default   [  60% ] 5/5 VUs  21.0s/35.0s
+
+running (0m22.0s), 5/5 VUs, 58 complete and 0 interrupted iterations
+default   [  63% ] 5/5 VUs  22.0s/35.0s
+
+running (0m23.0s), 5/5 VUs, 61 complete and 0 interrupted iterations
+default   [  66% ] 5/5 VUs  23.0s/35.0s
+
+running (0m24.0s), 5/5 VUs, 65 complete and 0 interrupted iterations
+default   [  69% ] 5/5 VUs  24.0s/35.0s
+
+running (0m25.0s), 5/5 VUs, 68 complete and 0 interrupted iterations
+default   [  71% ] 5/5 VUs  25.0s/35.0s
+
+running (0m26.0s), 5/5 VUs, 71 complete and 0 interrupted iterations
+default   [  74% ] 5/5 VUs  26.0s/35.0s
+
+running (0m27.0s), 5/5 VUs, 76 complete and 0 interrupted iterations
+default   [  77% ] 5/5 VUs  27.0s/35.0s
+
+running (0m28.0s), 5/5 VUs, 79 complete and 0 interrupted iterations
+default   [  80% ] 5/5 VUs  28.0s/35.0s
+
+running (0m29.0s), 5/5 VUs, 83 complete and 0 interrupted iterations
+default   [  83% ] 5/5 VUs  29.0s/35.0s
+
+running (0m30.0s), 5/5 VUs, 86 complete and 0 interrupted iterations
+default   [  86% ] 5/5 VUs  30.0s/35.0s
+
+running (0m31.0s), 5/5 VUs, 90 complete and 0 interrupted iterations
+default   [  89% ] 5/5 VUs  31.0s/35.0s
+
+running (0m32.0s), 5/5 VUs, 94 complete and 0 interrupted iterations
+default   [  91% ] 5/5 VUs  32.0s/35.0s
+
+running (0m33.0s), 4/5 VUs, 96 complete and 0 interrupted iterations
+default   [  94% ] 4/5 VUs  33.0s/35.0s
+
+running (0m34.0s), 2/5 VUs, 100 complete and 0 interrupted iterations
+default   [  97% ] 2/5 VUs  34.0s/35.0s
+
+running (0m35.0s), 2/5 VUs, 101 complete and 0 interrupted iterations
+default   [ 100% ] 2/5 VUs  35.0s/35.0s
+
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✓ 'p(95)<1500' p(95)=271.44ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 412     11.448754/s
+    checks_succeeded...: 100.00% 412 out of 412
+    checks_failed......: 0.00%   0 out of 412
+
+    ✓ nombres responde 200
+    ✓ trae nombres
+    ✓ pizza responde 200
+    ✓ la pizza tiene nombre
+
+    HTTP
+    http_req_duration..............: avg=193.77ms min=151.06ms med=170.43ms max=287.08ms p(90)=253.36ms p(95)=271.44ms
+      { expected_response:true }...: avg=193.77ms min=151.06ms med=170.43ms max=287.08ms p(90)=253.36ms p(95)=271.44ms
+    http_req_failed................: 0.00%  0 out of 206
+    http_reqs......................: 206    5.724377/s
+
+    EXECUTION
+    iteration_duration.............: avg=1.4s     min=1.32s    med=1.39s    max=1.78s    p(90)=1.44s    p(95)=1.44s   
+    iterations.....................: 103    2.862188/s
+    vus............................: 2      min=1        max=5
+    vus_max........................: 5      min=5        max=5
+
+    NETWORK
+    data_received..................: 205 kB 5.7 kB/s
+    data_sent......................: 54 kB  1.5 kB/s
+
+
+
+
+running (0m36.0s), 0/5 VUs, 103 complete and 0 interrupted iterations
+default ✓ [ 100% ] 0/5 VUs  35s

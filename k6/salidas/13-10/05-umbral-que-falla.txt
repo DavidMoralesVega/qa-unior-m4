@@ -1,0 +1,86 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: 05-umbral-que-falla.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 5 max VUs, 40s max duration (incl. graceful stop):
+              * default: 5 looping VUs for 10s (gracefulStop: 30s)
+
+
+running (01.0s), 5/5 VUs, 5 complete and 0 interrupted iterations
+default   [  10% ] 5 VUs  01.0s/10s
+
+running (02.0s), 5/5 VUs, 15 complete and 0 interrupted iterations
+default   [  20% ] 5 VUs  02.0s/10s
+
+running (03.0s), 5/5 VUs, 25 complete and 0 interrupted iterations
+default   [  30% ] 5 VUs  03.0s/10s
+
+running (04.0s), 5/5 VUs, 35 complete and 0 interrupted iterations
+default   [  40% ] 5 VUs  04.0s/10s
+
+running (05.0s), 5/5 VUs, 45 complete and 0 interrupted iterations
+default   [  50% ] 5 VUs  05.0s/10s
+
+running (06.0s), 5/5 VUs, 55 complete and 0 interrupted iterations
+default   [  60% ] 5 VUs  06.0s/10s
+
+running (07.0s), 5/5 VUs, 65 complete and 0 interrupted iterations
+default   [  70% ] 5 VUs  07.0s/10s
+
+running (08.0s), 5/5 VUs, 75 complete and 0 interrupted iterations
+default   [  80% ] 5 VUs  08.0s/10s
+
+running (09.0s), 5/5 VUs, 85 complete and 0 interrupted iterations
+default   [  90% ] 5 VUs  09.0s/10s
+
+running (10.0s), 5/5 VUs, 95 complete and 0 interrupted iterations
+default   [ 100% ] 5 VUs  10.0s/10s
+
+
+  █ THRESHOLDS 
+
+    http_req_duration
+    ✗ 'p(95)<1' p(95)=6.44ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 100     9.864328/s
+    checks_succeeded...: 100.00% 100 out of 100
+    checks_failed......: 0.00%   0 out of 100
+
+    ✓ listar tareas 200
+
+    HTTP
+    http_req_duration..............: avg=4.71ms   min=2.18ms   med=4.56ms   max=25.31ms p(90)=6.27ms   p(95)=6.44ms  
+      { expected_response:true }...: avg=4.71ms   min=2.18ms   med=4.56ms   max=25.31ms p(90)=6.27ms   p(95)=6.44ms  
+    http_req_failed................: 0.00% 0 out of 101
+    http_reqs......................: 101   9.962971/s
+
+    EXECUTION
+    iteration_duration.............: avg=505.49ms min=503.63ms med=505.48ms max=507.6ms p(90)=506.81ms p(95)=506.91ms
+    iterations.....................: 100   9.864328/s
+    vus............................: 5     min=5        max=5
+    vus_max........................: 5     min=5        max=5
+
+    NETWORK
+    data_received..................: 53 kB 5.2 kB/s
+    data_sent......................: 35 kB 3.4 kB/s
+
+
+
+
+running (10.1s), 0/5 VUs, 100 complete and 0 interrupted iterations
+default ✓ [ 100% ] 5 VUs  10s
+time="2026-10-13T17:58:59-04:00" level=error msg="thresholds on metrics 'http_req_duration' have been crossed"

@@ -1,0 +1,45 @@
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{name:listar}
+    ✓ 'p(95)<200' p(95)=1.7ms
+
+    http_req_duration{name:login}
+    ✗ 'p(95)<200' p(95)=494.56ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 33056   328.001903/s
+    checks_succeeded...: 100.00% 33056 out of 33056
+    checks_failed......: 0.00%   0 out of 33056
+
+    ✓ login 201
+    ✓ listar tareas 200
+
+    HTTP
+    http_req_duration..............: avg=95.52ms  min=411µs   med=14.1ms  max=3.59s   p(90)=453.35ms p(95)=475.04ms
+      { expected_response:true }...: avg=95.52ms  min=411µs   med=14.1ms  max=3.59s   p(90)=453.35ms p(95)=475.04ms
+      { name:listar }..............: avg=1.1ms    min=411µs   med=1.06ms  max=22.09ms p(90)=1.53ms   p(95)=1.7ms   
+      { name:login }...............: avg=189.94ms min=14.05ms med=19.57ms max=3.59s   p(90)=475.04ms p(95)=494.56ms
+    http_req_failed................: 0.00%  0 out of 33056
+    http_reqs......................: 33056  328.001903/s
+
+    EXECUTION
+    iteration_duration.............: avg=1.19s    min=1.01s   med=1.02s   max=4.59s   p(90)=1.47s    p(95)=1.49s   
+    iterations.....................: 16528  164.000952/s
+    vus............................: 18     min=10         max=350
+    vus_max........................: 350    min=350        max=350
+
+    NETWORK
+    data_received..................: 20 MB  200 kB/s
+    data_sent......................: 8.7 MB 87 kB/s
+
+
+
+time="2026-10-12T11:29:19-04:00" level=error msg="thresholds on metrics 'http_req_duration{name:login}' have been crossed"
+código de salida: 99

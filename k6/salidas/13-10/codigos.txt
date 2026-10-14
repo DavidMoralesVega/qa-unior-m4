@@ -1,0 +1,7 @@
+02-carga codigo=0 dur=57s
+05-umbral-que-falla codigo=99 dur=10s
+03-estres codigo=99 dur=102s
+04-picos codigo=99 dur=61s
+06-navegador codigo=0 dur=9s
+07-quickpizza codigo=0
+01-humo codigo=0

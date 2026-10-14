@@ -1,0 +1,45 @@
+
+
+  █ THRESHOLDS 
+
+    checks
+    ✓ 'rate>0.99' rate=100.00%
+
+    http_req_duration
+    ✓ 'p(95)<200' p(95)=8.53ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3839    68.823871/s
+    checks_succeeded...: 100.00% 3839 out of 3839
+    checks_failed......: 0.00%   0 out of 3839
+
+    ✓ registro responde 201
+    ✓ login del usuario nuevo 201
+    ✓ crear tarea 201
+    ✓ listar tareas 200
+    ✓ borrar tarea 200
+
+    HTTP
+    http_req_duration..............: avg=3.51ms min=663µs med=2.71ms max=23.08ms p(90)=7.04ms p(95)=8.53ms
+      { expected_response:true }...: avg=3.51ms min=663µs med=2.71ms max=23.08ms p(90)=7.04ms p(95)=8.53ms
+    http_req_failed................: 0.00%  0 out of 3840
+    http_reqs......................: 3840   68.841799/s
+
+    EXECUTION
+    iteration_duration.............: avg=1.01s  min=1s    med=1.01s  max=1.02s   p(90)=1.01s  p(95)=1.01s 
+    iterations.....................: 1279   22.929339/s
+    vus............................: 2      min=2         max=30
+    vus_max........................: 30     min=30        max=30
+
+    NETWORK
+    data_received..................: 2.5 MB 45 kB/s
+    data_sent......................: 1.7 MB 30 kB/s
+
+
+
+código de salida: 0

@@ -1,0 +1,17 @@
+I generated tests for the three scenarios with the `playwright-test-generator` agent, and all three pass. They passed again when I ran each one twice more in a row, so 6 out of 6 runs passed. Test names, `describe` blocks and comments are in Spanish.
+
+| Escenario | Archivo |
+|---|---|
+| 1.1 Carga del catálogo y listado de los 6 programas | `tests/catalogo/listado-programas.spec.ts` |
+| 1.2 Navegación del catálogo a la ficha y regreso | `tests/catalogo/navegacion-ficha.spec.ts` |
+| 3.1 Acceso directo a /admin/portal sin sesión redirige a inicio de sesión | `tests/seguridad/admin-portal-anonimo.spec.ts` |
+
+**Changes I made to the generated code:**
+- The file headers pointed to `specs/plan.md`; I corrected them to `specs/plan-learn-unior.md`.
+- In 1.1 the agent found each program card by the last matching generic `div`, which breaks if the page layout changes. I changed it to match on `mat-card`, which 1.2 already uses.
+
+**Things the tests check less strictly than the plan:**
+- **1.2:** The "Cargando el programa…" progress bar shows up too briefly to catch reliably. The test only checks that it has gone away, not that it appeared.
+- **3.1:** The test doesn't check the brief generic page title shown on first load. The "Atrás" step only confirms the URL is not `/admin/portal`. Because the test starts in a fresh browser, going back doesn't return to any real page, so this step proves little.
+
+The tests are left uncommitted in the working tree.
