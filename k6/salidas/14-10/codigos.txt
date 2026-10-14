@@ -1,0 +1,5 @@
+02-carga código=0
+05-umbral-que-falla código=99
+03-estres código=99
+04-picos código=99
+06 código=0
